@@ -126,16 +126,13 @@
       var $menu = document.getElementById('menu');
 			consulta.addListener(mediaQuery);
 			function toggleMenu(){
-				$menu.classList.toggle('active')
-				$burguerButton.classList.toggle('icon-cancel-circle');
+				$menu.classList.toggle('active');
 			};
 			function showMenu(){
-				$menu.classList.toggle('active')
-				$burguerButton.classList.add('icon-cancel-circle');
+				$menu.classList.toggle('active');
 			};
 			function hideMenu(){
-				$menu.classList.remove('active')
-				$burguerButton.classList.toggle('icon-cancel-circle');
+				$menu.classList.remove('active');
 			};
 
 			function mediaQuery() {

@@ -58,7 +58,7 @@
 			 <!-- <video src="video/320x240.ogg"></video> -->
 		   <!-- guitarra 1 -->
 		   <article class="guitarra">
-		   	  <img class="derecha" data-src="images/invie-acustica.png| images/invie-acustica2x.png" alt="Guitarra Ivie Acustica" width="350">
+		   	  <img class="derecha blazy" data-src="images/invie-acustica.png" data-src-small=" images/invie-acustica2x.png" alt="Guitarra Ivie Acustica" width="350">
 		   	  <div class="contenedor-guitarra-a">
 		   	    <h3 class="title-b">Invie Acústica</h3>
 		   	    <ol>
@@ -71,8 +71,8 @@
 
 		  <!-- guitarra 2  -->
 		   <article class="guitarra b">
-		   	  <img class="izquierda" data-src="images/invie-classic.png| images/invie-classic2x.png" alt="Guitarra Ivie Classic" width="350">
-		   	    <div class="contenedor-guitarra-b">
+				 <img class="izquierda" data-src="images/invie-classic.png" data-src-small="images/invie-classic2x.png" alt="Guitarra Ivie Classic" width="350">
+				 <div class="contenedor-guitarra-b">
 		   	    <h3 class="title-b">Invie Classic</h3>
 		   	    <ol>
 		   	  	  <li>Estilo vintage</li>
@@ -86,7 +86,7 @@
 		<footer class="footer">
 		    <div class="contenedor">
 			    <div class="contacto">
-				    <img data-src="images/invie-white.png| images/invie-white2x.png" alt="logotipo blanco">
+				    <img data-src="images/invie-white.png" data-src-small="images/invie-white2x.png" alt="logotipo blanco">
 				    <a href="tel:+573024456678"><strong>Teléfono</strong> <span>3024456678    </span></a>
 				    <a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span></a>
 			    </div>
@@ -136,16 +136,13 @@
       var $menu = document.getElementById('menu');
 			consulta.addListener(mediaQuery);
 			function toggleMenu(){
-				$menu.classList.toggle('active')
-				$burguerButton.classList.toggle('icon-cancel-circle');
+				$menu.classList.toggle('active');
 			};
 			function showMenu(){
-				$menu.classList.toggle('active')
-				$burguerButton.classList.add('icon-cancel-circle');
+				$menu.classList.toggle('active');
 			};
 			function hideMenu(){
-				$menu.classList.remove('active')
-				$burguerButton.classList.toggle('icon-cancel-circle');
+				$menu.classList.remove('active');
 			};
 
 			function mediaQuery() {
@@ -174,7 +171,7 @@
 			var gestos = new Hammer($body);
 			gestos.on('swipeleft', hideMenu);
 			gestos.on('swiperight', showMenu);
-
     </script>
+		<link rel="stylesheet" href="css/invie.css"/>
 	</body>
 </html>
