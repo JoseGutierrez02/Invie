@@ -5,8 +5,9 @@
 		<meta charset="utf-8">
 		<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
 		<link rel="stylesheet" href="css/invie.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 	</head>
-	<body>
+	<body class="precios">
 		<!-- header -->
 		<header id="header" class="header background">
 		    <div class="contenedor">
@@ -14,7 +15,8 @@
 			    <figure class="logotipo">
 				    <img src="images/invie.png" width="186" height="60" alt="Invie Logotipo">
 			    </figure>
-			    <nav class="menu">
+					<span class="burguer-button icon-menu" id="burguer-button"></span>
+			    <nav class="menu" id="menu">
 				<ul>
 					<li>
 						<a href="index.html">Home</a>
@@ -32,9 +34,12 @@
 		</header>
 		<section class="tabla">
 		    <div class="contenedor">
-			    <table>
+			  <table>
 				<thead>
 					<tr>
+						<th>Modelo</th>
+						<th>Precio</th>
+						<th>Descripción</th>
 						<th>Modelo</th>
 						<th>Precio</th>
 						<th>Descripción</th>
@@ -45,20 +50,29 @@
 						<td>Invie Classic</td>
 						<td>$100000</td>
 						<td>Una guitarra muy pro</td>
-					</tr>
-					<tr>
 						<td>Invie Classic</td>
 						<td>$100000</td>
 						<td>Una guitarra muy pro</td>
 					</tr>
 					<tr>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
+					</tr>
+					<tr>
+						<td>Invie Classic</td>
+						<td>$100000</td>
+						<td>Una guitarra muy pro</td>
 						<td>Invie Classic</td>
 						<td>$100000</td>
 						<td>Una guitarra muy pro</td>
 					</tr>
 				</tbody>
 			    </table>
-		    </div>	
+		    </div>
 		</section>
 		<footer class="footer">
 		    <div class="contenedor">
@@ -93,7 +107,7 @@
 				        </label>
 				        <label for="otros">
 				    	    <input type="checkbox" id="otros" name="intereses" value="otros"/> Otros
-				        </label>				    	
+				        </label>
 				        </div>
 				    </div>
 				    <div class="col2">
@@ -104,6 +118,36 @@
 			    </form>
 			</div>
 		</footer>
+		<script>
+		  var consulta = window.matchMedia('(max-width: 500px)');
+			var $burguerButton = document.getElementById('burguer-button');
+      var $menu = document.getElementById('menu');
+			consulta.addListener(mediaQuery);
+			function toggleMenu(){
+				$menu.classList.toggle('active')
+				$burguerButton.classList.toggle('icon-cancel-circle');
+			};
+
+			function mediaQuery() {
+				if(consulta.matches)
+				{
+					//si se cumple pasa esto
+					console.log('se cumplió la condición');
+					$burguerButton.addEventListener('touchstart', toggleMenu);
+				}
+				else
+				{
+					//si no se cumple pasa esto
+					console.log('no se cumplió la condición');
+					$burguerButton.removeEventListener('touchstart', toggleMenu);
+				}
+			}
+
+			//Be lazy
+			var bLazy = new Blazy({
+    		selector: 'img'
+			});
+    </script>
 
 	</body>
-</html>	
+</html>
